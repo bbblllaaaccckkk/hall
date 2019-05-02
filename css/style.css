@@ -62,6 +62,7 @@ header .bg-light {
     font-weight: bold;
 }
 
+/* обводка вокруг кнопки */
 .wrapper-choice:hover {
     background: #ffee5a;
     border-radius: 50%;
@@ -74,6 +75,8 @@ input[type="checkbox"]:checked + label {
 
 
 /* всплывающие подсказки начало*/
+
+/* сама подсказка */
 .hint {
     display: flex;
     flex-direction: column;
@@ -83,14 +86,16 @@ input[type="checkbox"]:checked + label {
     position: absolute;
     width: 310px;
     padding: 10px 0;
-    z-index: 5;
+    /* z-index: 5; */
     box-shadow: 0px 0px 3px 5px rgba(0,0,0,0.37);
-    top: -120px;
+    top: -110px;
     left: -125px;
-    opacity: 0;
+    /* opacity: 0; */
     transition: .75s ease-in-out;
+    visibility: hidden;
 }
 
+/* труегольник снизу под подсказкой */
 .hint-head::after {
     content: '';
     border: 10px solid transparent;
@@ -100,11 +105,15 @@ input[type="checkbox"]:checked + label {
     left: 44px;
 }
 
+/* При наведение появляеться подсказка */
 .wrapper-choice:hover > .hint {
-    opacity: 1;
+    /* opacity: 1; */
     top: -94px;
+    visibility: visible;
 }
 
+
+/* заголовок подсказки- относительно его спозиционарован треугольник */
 .hint-head {
     font-weight: 600;
     position: relative;
